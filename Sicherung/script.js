@@ -1,10 +1,7 @@
-// da sich die Größe des Spielfeldes sich im Spielverlauf nicht ändert, hab ich das Array schon mit Werten befüllt
 let fields = ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
 
-// das Spiel beginnt das Kreuz
 let currentShape = 'cross';
 
-// das Spielfeld wird in den Ursprungszustand versetzt
 function init() {
     for (let i = 0; i < 9; i++) {
         document.getElementById(`circle-${i}`).classList.add('d-none');
@@ -18,7 +15,6 @@ function init() {
 }
 
 function fillShape(id) {
-    // Kreuz und Kreis wechseln sich ab
     if (currentShape == "cross") {
         currentShape = 'circle';
     } else {
@@ -27,9 +23,7 @@ function fillShape(id) {
     fields[id] = currentShape;
     console.log(fields);
 
-    // die gesetzte Form wird mit draw() sichtbar gemacht
     draw();
-
     let winner = checkForWin();
     checkWinner(winner);
 }
@@ -62,7 +56,7 @@ function draw() {
 }
 
 function checkForWin() {
-    let winner;
+    let winner = 'Nobody';
 
     switch (true) {
         case fields[0] == fields[1] && fields[1] == fields[2]:
@@ -98,8 +92,9 @@ function checkForWin() {
             break;
 
         default:
-            winner = 'nobody';
+            winner = 'Nobody';
+            break;
     }
-    console.log(winner + ' has win');
+    // console.log(winner + ' ist winnerer');
     return winner;
 }
