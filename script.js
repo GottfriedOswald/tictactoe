@@ -4,6 +4,9 @@ let fields = ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
 // das Spiel beginnt das Kreuz
 let currentShape = 'cross';
 
+// zum zählen der Spielzüge
+let counter = 0;
+
 // das Spielfeld wird in den Ursprungszustand versetzt
 function init() {
     for (let i = 0; i < 9; i++) {
@@ -15,6 +18,7 @@ function init() {
     document.getElementById('winner-screen-nobody').classList.add('d-none');
     fields = ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
     document.getElementById('end-screen').classList.add('d-none');
+    counter = 0;
 }
 
 function fillShape(id) {
@@ -26,6 +30,8 @@ function fillShape(id) {
     }
     fields[id] = currentShape;
     console.log(fields);
+
+    counter++;
 
     // die gesetzte Form wird mit draw() sichtbar gemacht
     draw();
@@ -60,6 +66,8 @@ function draw() {
         }
     }
 }
+
+
 
 function checkForWin() {
     let winner;
@@ -100,6 +108,14 @@ function checkForWin() {
         default:
             winner = 'nobody';
     }
+    checkCounter();
     console.log(winner + ' has win');
     return winner;
+}
+
+function checkCounter() {
+    if (counter == 9) {
+        document.getElementById('winner-screen-nobody').classList.remove('d-none');
+        showEndScreen();
+    }
 }
