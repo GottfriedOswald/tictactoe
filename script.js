@@ -2,7 +2,7 @@
 let fields = ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
 
 // das Spiel beginnt das Kreuz
-let currentShape = 'cross';
+let currentShape = 'circle';
 
 // zum zählen der Spielzüge
 let counter = 0;
@@ -19,14 +19,17 @@ function init() {
     fields = ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
     document.getElementById('end-screen').classList.add('d-none');
     counter = 0;
+    activatePlayer1();
 }
 
 function fillShape(id) {
     // Kreuz und Kreis wechseln sich ab
-    if (currentShape == "cross") {
-        currentShape = 'circle';
+    if (currentShape == "circle") {
+        currentShape = 'cross';
+        activatePlayer2();
     } else {
-        currentShape = 'cross'
+        currentShape = 'circle'
+        activatePlayer1()
     }
     fields[id] = currentShape;
     console.log(fields);
@@ -118,4 +121,14 @@ function checkCounter() {
         document.getElementById('winner-screen-nobody').classList.remove('d-none');
         showEndScreen();
     }
+}
+
+function activatePlayer2() {
+    document.getElementById('player-1').classList.add('player-inactive');
+    document.getElementById('player-2').classList.remove('player-inactive');
+}
+
+function activatePlayer1() {
+    document.getElementById('player-2').classList.add('player-inactive');
+    document.getElementById('player-1').classList.remove('player-inactive');
 }
