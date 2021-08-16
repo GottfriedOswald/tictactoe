@@ -23,24 +23,28 @@ function init() {
 }
 
 function fillShape(id) {
-    // Kreuz und Kreis wechseln sich ab
-    if (currentShape == "circle") {
-        currentShape = 'cross';
-        activatePlayer2();
-    } else {
-        currentShape = 'circle'
-        activatePlayer1()
+    if (fields[id] != 'cross' && fields[id] != 'circle') {
+
+
+        // Kreuz und Kreis wechseln sich ab
+        if (currentShape == "circle") {
+            currentShape = 'cross';
+            activatePlayer2();
+        } else {
+            currentShape = 'circle'
+            activatePlayer1()
+        }
+        fields[id] = currentShape;
+        console.log(fields);
+
+        counter++;
+
+        // die gesetzte Form wird mit draw() sichtbar gemacht
+        draw();
+
+        let winner = checkForWin();
+        checkWinner(winner);
     }
-    fields[id] = currentShape;
-    console.log(fields);
-
-    counter++;
-
-    // die gesetzte Form wird mit draw() sichtbar gemacht
-    draw();
-
-    let winner = checkForWin();
-    checkWinner(winner);
 }
 
 function checkWinner(winner) {
