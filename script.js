@@ -19,6 +19,7 @@ function init() {
     fields = ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
     document.getElementById('end-screen').classList.add('d-none');
     counter = 0;
+    hideLines();
     activatePlayer1();
 }
 
@@ -82,34 +83,42 @@ function checkForWin() {
     switch (true) {
         case fields[0] == fields[1] && fields[1] == fields[2]:
             winner = fields[0];
+            document.getElementById('line-h1').style.transform = 'scale(1)'
             break;
 
         case fields[3] == fields[4] && fields[4] == fields[5]:
             winner = fields[3];
+            document.getElementById('line-h4').style.transform = 'scale(1)'
             break;
 
         case fields[6] == fields[7] && fields[7] == fields[8]:
             winner = fields[6];
+            document.getElementById('line-h7').style.transform = 'scale(1)'
             break;
 
         case fields[0] == fields[4] && fields[4] == fields[8]:
             winner = fields[0];
+            document.getElementById('line-d4-45').style.transform = 'rotate(45deg) scale(1)'
             break;
 
         case fields[2] == fields[4] && fields[4] == fields[6]:
             winner = fields[2];
+            document.getElementById('line-d4-135').style.transform = 'rotate(135deg) scale(1)'
             break;
 
         case fields[0] == fields[3] && fields[3] == fields[6]:
             winner = fields[0];
+            document.getElementById('line-v3').style.transform = 'rotate(90deg) scale(1)'
             break;
 
         case fields[1] == fields[4] && fields[4] == fields[7]:
             winner = fields[1];
+            document.getElementById('line-v4').style.transform = 'rotate(90deg) scale(1)'
             break;
 
         case fields[2] == fields[5] && fields[5] == fields[8]:
             winner = fields[2];
+            document.getElementById('line-v5').style.transform = 'rotate(90deg) scale(1)'
             break;
 
         default:
@@ -135,4 +144,15 @@ function activatePlayer2() {
 function activatePlayer1() {
     document.getElementById('player-2').classList.add('player-inactive');
     document.getElementById('player-1').classList.remove('player-inactive');
+}
+
+function hideLines() {
+    document.getElementById('line-h1').style.transform = 'scale(0)';
+    document.getElementById('line-h4').style.transform = 'scale(0)';
+    document.getElementById('line-h7').style.transform = 'scale(0)';
+    document.getElementById('line-d4-45').style.transform = 'rotate(45deg) scale(0)';
+    document.getElementById('line-d4-135').style.transform = 'rotate(135deg) scale(0)';
+    document.getElementById('line-v3').style.transform = 'rotate(90deg) scale(0)';
+    document.getElementById('line-v4').style.transform = 'rotate(90deg) scale(0)';
+    document.getElementById('line-v5').style.transform = 'rotate(90deg) scale(0)';
 }

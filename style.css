@@ -109,6 +109,35 @@ table tr td div {
     margin-top: 78px;
 }
 
+.horizontal-line {
+    position: absolute;
+    width: 350px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transform: scale(0);
+    transition: transform 225ms ease-in-out;
+}
+
+.horizontal-line-long {
+    position: absolute;
+    width: 450px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: transform 225ms ease-in-out;
+}
+
+.vertical {
+    transform: rotate(90deg) scale(0);
+}
+
+.diagonal45 {
+    transform: rotate(45deg) scale(0);
+}
+
+.diagonal135 {
+    transform: rotate(135deg) scale(0);
+}
+
 .d-none {
     display: none;
 }
