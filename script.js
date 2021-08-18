@@ -60,7 +60,10 @@ function checkWinner(winner) {
 }
 
 function showEndScreen() {
-    document.getElementById('end-screen').classList.remove('d-none');
+    setTimeout(function() {
+        document.getElementById('end-screen').classList.remove('d-none');
+    }, 600);
+
 }
 
 

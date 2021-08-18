@@ -88,7 +88,8 @@ table tr td div {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(127, 255, 212, 0.548);
+    /* background-color: rgba(127, 255, 212, 0.548); */
+    background-color: rgba(63, 68, 66, 0.295);
     z-index: 10;
 }
 
@@ -101,8 +102,8 @@ table tr td div {
 .shadow {
     min-height: 700px;
     min-width: 399px;
-    background-color: rgba(63, 68, 66, 0.295);
     z-index: 11;
+    animation: zoomIn 225ms ease-in-out;
 }
 
 .play-area {
@@ -136,6 +137,19 @@ table tr td div {
 
 .diagonal135 {
     transform: rotate(135deg) scale(0);
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.game-over-pic {
+    border-radius: 16px;
 }
 
 .d-none {
