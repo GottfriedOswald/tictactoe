@@ -103,18 +103,25 @@
 
         </div>
 
-        <div class="winner-screen" id="winner-screen">
+        <!-- <div class="winner-screen" id="winner-screen">
             <h2>and the Winner is:</h2>
             <img src="img/single-circle.png" alt="pic of circle" class="d-none" id="winner-screen-circle">
             <img src="img/single-cross.png" alt="pic of circle" class="d-none" id="winner-screen-cross">
             <p class="d-none" id="winner-screen-nobody">Nobody</p>
-        </div>
+        </div> -->
 
         <!-- <div><button class="reset-btn" onclick="init()">Reset</button></div> -->
         <div class="end-screen center d-none" id="end-screen">
-            <div class="shadow center">
+            <div class="shadow center direction-column">
                 <img class="game-over-pic" src="img/game-over-leuchtend-klein.png" alt="Game Over Picture" onclick="init()">
                 <!-- <button class="reset-btn" onclick="init()">Reset</button> -->
+                <div class="winner-screen" id="winner-screen">
+                    <h2>and the Winner is:</h2>
+                    <img src="img/single-circle.png" alt="pic of circle" class="d-none" id="winner-screen-circle">
+                    <img src="img/single-cross.png" alt="pic of circle" class="d-none" id="winner-screen-cross">
+                    <p class="winner-screen-nobody d-none" id="winner-screen-nobody"><b>Nobody</b></p>
+                    <p>click on "Game over" to reset</p>
+                </div>
             </div>
         </div>
 

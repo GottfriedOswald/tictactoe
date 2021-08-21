@@ -88,7 +88,6 @@ table tr td div {
     left: 0;
     right: 0;
     bottom: 0;
-    /* background-color: rgba(127, 255, 212, 0.548); */
     background-color: rgba(63, 68, 66, 0.295);
     z-index: 10;
 }
@@ -99,11 +98,33 @@ table tr td div {
     align-items: center;
 }
 
+.direction-column {
+    flex-direction: column;
+}
+
 .shadow {
     min-height: 700px;
     min-width: 399px;
     z-index: 11;
     animation: zoomIn 225ms ease-in-out;
+}
+
+.winner-screen {
+    color: black;
+    height: 200px;
+    width: 150px;
+    background-color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    margin-top: 16px;
+    border-radius: 16px;
+}
+
+.winner-screen img {
+    width: 100px;
+}
+
+.winner-screen-nobody {
+    font-size: 2rem;
 }
 
 .play-area {
@@ -150,6 +171,12 @@ table tr td div {
 
 .game-over-pic {
     border-radius: 16px;
+}
+
+@media (max-width:480px) {
+    .game-over-pic {
+        width: 300px;
+    }
 }
 
 .d-none {
